@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MUDS" targetNamespace="http://tempuri.org/MUDS.xsd" xmlns:mstns="http://tempuri.org/MUDS.xsd" xmlns="http://tempuri.org/MUDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="MachineUpdateDataBaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MachineUpdateDataBaseConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.MachineUpdateDataBaseConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UpdateNotes MQTableAdapter" GeneratorDataComponentClassName="UpdateNotes_MQTableAdapter" Name="UpdateNotes MQ" UserDataComponentName="UpdateNotes MQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MachineUpdateDataBaseConnectionString (Web.config)" DbObjectName="MachineUpdateDataBase.dbo.[UpdateNotes MQ]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT UpdateNoteID, UpdateID, UpdateNotes FROM dbo.[UpdateNotes MQ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UpdateNoteID" DataSetColumn="UpdateNoteID" />
+              <Mapping SourceColumn="UpdateID" DataSetColumn="UpdateID" />
+              <Mapping SourceColumn="UpdateNotes" DataSetColumn="UpdateNotes" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Host LQTableAdapter" GeneratorDataComponentClassName="Host_LQTableAdapter" Name="Host LQ" UserDataComponentName="Host LQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MachineUpdateDataBaseConnectionString (Web.config)" DbObjectName="MachineUpdateDataBase.dbo.[Host LQ]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MachineID, MachineName, MachineIP, MachineType, MachineOS FROM dbo.[Host LQ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MachineID" DataSetColumn="MachineID" />
+              <Mapping SourceColumn="MachineName" DataSetColumn="MachineName" />
+              <Mapping SourceColumn="MachineIP" DataSetColumn="MachineIP" />
+              <Mapping SourceColumn="MachineType" DataSetColumn="MachineType" />
+              <Mapping SourceColumn="MachineOS" DataSetColumn="MachineOS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Machine MQTableAdapter" GeneratorDataComponentClassName="Machine_MQTableAdapter" Name="Machine MQ" UserDataComponentName="Machine MQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MachineUpdateDataBaseConnectionString (Web.config)" DbObjectName="MachineUpdateDataBase.dbo.[Machine MQ]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MachineID, MachineName, MachineIP, MachineTypeID, MachineOSID, MachineHostID, Virtual FROM dbo.[Machine MQ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MachineID" DataSetColumn="MachineID" />
+              <Mapping SourceColumn="MachineName" DataSetColumn="MachineName" />
+              <Mapping SourceColumn="MachineIP" DataSetColumn="MachineIP" />
+              <Mapping SourceColumn="MachineTypeID" DataSetColumn="MachineTypeID" />
+              <Mapping SourceColumn="MachineOSID" DataSetColumn="MachineOSID" />
+              <Mapping SourceColumn="MachineHostID" DataSetColumn="MachineHostID" />
+              <Mapping SourceColumn="Virtual" DataSetColumn="Virtual" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MachineHost MQTableAdapter" GeneratorDataComponentClassName="MachineHost_MQTableAdapter" Name="MachineHost MQ" UserDataComponentName="MachineHost MQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MachineUpdateDataBaseConnectionString (Web.config)" DbObjectName="MachineUpdateDataBase.dbo.[MachineHost MQ]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MachineHostID, MachineID FROM dbo.[MachineHost MQ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MachineHostID" DataSetColumn="MachineHostID" />
+              <Mapping SourceColumn="MachineID" DataSetColumn="MachineID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MachineOS MQTableAdapter" GeneratorDataComponentClassName="MachineOS_MQTableAdapter" Name="MachineOS MQ" UserDataComponentName="MachineOS MQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MachineUpdateDataBaseConnectionString (Web.config)" DbObjectName="MachineUpdateDataBase.dbo.[MachineOS MQ]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MachineOSID, MachineOS FROM dbo.[MachineOS MQ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MachineOSID" DataSetColumn="MachineOSID" />
+              <Mapping SourceColumn="MachineOS" DataSetColumn="MachineOS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MachineType MQTableAdapter" GeneratorDataComponentClassName="MachineType_MQTableAdapter" Name="MachineType MQ" UserDataComponentName="MachineType MQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MachineUpdateDataBaseConnectionString (Web.config)" DbObjectName="MachineUpdateDataBase.dbo.[MachineType MQ]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MachineTypeID, MachineType FROM dbo.[MachineType MQ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MachineTypeID" DataSetColumn="MachineTypeID" />
+              <Mapping SourceColumn="MachineType" DataSetColumn="MachineType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MachineUpdate MQTableAdapter" GeneratorDataComponentClassName="MachineUpdate_MQTableAdapter" Name="MachineUpdate MQ" UserDataComponentName="MachineUpdate MQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MachineUpdateDataBaseConnectionString (Web.config)" DbObjectName="MachineUpdateDataBase.dbo.[MachineUpdate MQ]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT UpdateID, MachineID FROM dbo.[MachineUpdate MQ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UpdateID" DataSetColumn="UpdateID" />
+              <Mapping SourceColumn="MachineID" DataSetColumn="MachineID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OS LQTableAdapter" GeneratorDataComponentClassName="OS_LQTableAdapter" Name="OS LQ" UserDataComponentName="OS LQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MachineUpdateDataBaseConnectionString (Web.config)" DbObjectName="MachineUpdateDataBase.dbo.[OS LQ]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MachineOSID, MachineOS FROM dbo.[OS LQ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MachineOSID" DataSetColumn="MachineOSID" />
+              <Mapping SourceColumn="MachineOS" DataSetColumn="MachineOS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Type LQTableAdapter" GeneratorDataComponentClassName="Type_LQTableAdapter" Name="Type LQ" UserDataComponentName="Type LQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MachineUpdateDataBaseConnectionString (Web.config)" DbObjectName="MachineUpdateDataBase.dbo.[Type LQ]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MachineTypeID, MachineType FROM dbo.[Type LQ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MachineTypeID" DataSetColumn="MachineTypeID" />
+              <Mapping SourceColumn="MachineType" DataSetColumn="MachineType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Update LQTableAdapter" GeneratorDataComponentClassName="Update_LQTableAdapter" Name="Update LQ" UserDataComponentName="Update LQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MachineUpdateDataBaseConnectionString (Web.config)" DbObjectName="MachineUpdateDataBase.dbo.[Update LQ]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MachineID, MachineIP, MachineTypeID, MachineOSID, MachineHostID, Virtual FROM dbo.[Update LQ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MachineID" DataSetColumn="MachineID" />
+              <Mapping SourceColumn="MachineIP" DataSetColumn="MachineIP" />
+              <Mapping SourceColumn="MachineTypeID" DataSetColumn="MachineTypeID" />
+              <Mapping SourceColumn="MachineOSID" DataSetColumn="MachineOSID" />
+              <Mapping SourceColumn="MachineHostID" DataSetColumn="MachineHostID" />
+              <Mapping SourceColumn="Virtual" DataSetColumn="Virtual" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UpdateNotes LQTableAdapter" GeneratorDataComponentClassName="UpdateNotes_LQTableAdapter" Name="UpdateNotes LQ" UserDataComponentName="UpdateNotes LQTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="MachineUpdateDataBaseConnectionString (Web.config)" DbObjectName="MachineUpdateDataBase.dbo.[UpdateNotes LQ]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT UpdateID, MachineID FROM dbo.[UpdateNotes LQ]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UpdateID" DataSetColumn="UpdateID" />
+              <Mapping SourceColumn="MachineID" DataSetColumn="MachineID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MUDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MUDS" msprop:Generator_UserDSName="MUDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UpdateNotes_x0020_MQ" msprop:Generator_TableClassName="UpdateNotes_MQDataTable" msprop:Generator_TableVarName="tableUpdateNotes_MQ" msprop:Generator_TablePropName="UpdateNotes_MQ" msprop:Generator_RowDeletingName="UpdateNotes_MQRowDeleting" msprop:Generator_RowChangingName="UpdateNotes_MQRowChanging" msprop:Generator_RowEvHandlerName="UpdateNotes_MQRowChangeEventHandler" msprop:Generator_RowDeletedName="UpdateNotes_MQRowDeleted" msprop:Generator_UserTableName="UpdateNotes MQ" msprop:Generator_RowChangedName="UpdateNotes_MQRowChanged" msprop:Generator_RowEvArgName="UpdateNotes_MQRowChangeEvent" msprop:Generator_RowClassName="UpdateNotes_MQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UpdateNoteID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUpdateNoteID" msprop:Generator_ColumnPropNameInRow="UpdateNoteID" msprop:Generator_ColumnPropNameInTable="UpdateNoteIDColumn" msprop:Generator_UserColumnName="UpdateNoteID" type="xs:int" />
+              <xs:element name="UpdateID" msprop:Generator_ColumnVarNameInTable="columnUpdateID" msprop:Generator_ColumnPropNameInRow="UpdateID" msprop:Generator_ColumnPropNameInTable="UpdateIDColumn" msprop:Generator_UserColumnName="UpdateID" type="xs:int" minOccurs="0" />
+              <xs:element name="UpdateNotes" msprop:Generator_ColumnVarNameInTable="columnUpdateNotes" msprop:Generator_ColumnPropNameInRow="UpdateNotes" msprop:Generator_ColumnPropNameInTable="UpdateNotesColumn" msprop:Generator_UserColumnName="UpdateNotes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Host_x0020_LQ" msprop:Generator_TableClassName="Host_LQDataTable" msprop:Generator_TableVarName="tableHost_LQ" msprop:Generator_TablePropName="Host_LQ" msprop:Generator_RowDeletingName="Host_LQRowDeleting" msprop:Generator_RowChangingName="Host_LQRowChanging" msprop:Generator_RowEvHandlerName="Host_LQRowChangeEventHandler" msprop:Generator_RowDeletedName="Host_LQRowDeleted" msprop:Generator_UserTableName="Host LQ" msprop:Generator_RowChangedName="Host_LQRowChanged" msprop:Generator_RowEvArgName="Host_LQRowChangeEvent" msprop:Generator_RowClassName="Host_LQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MachineID" msprop:Generator_ColumnVarNameInTable="columnMachineID" msprop:Generator_ColumnPropNameInRow="MachineID" msprop:Generator_ColumnPropNameInTable="MachineIDColumn" msprop:Generator_UserColumnName="MachineID" type="xs:int" minOccurs="0" />
+              <xs:element name="MachineName" msprop:Generator_ColumnVarNameInTable="columnMachineName" msprop:Generator_ColumnPropNameInRow="MachineName" msprop:Generator_ColumnPropNameInTable="MachineNameColumn" msprop:Generator_UserColumnName="MachineName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MachineIP" msprop:Generator_ColumnVarNameInTable="columnMachineIP" msprop:Generator_ColumnPropNameInRow="MachineIP" msprop:Generator_ColumnPropNameInTable="MachineIPColumn" msprop:Generator_UserColumnName="MachineIP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MachineType" msprop:Generator_ColumnVarNameInTable="columnMachineType" msprop:Generator_ColumnPropNameInRow="MachineType" msprop:Generator_ColumnPropNameInTable="MachineTypeColumn" msprop:Generator_UserColumnName="MachineType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MachineOS" msprop:Generator_ColumnVarNameInTable="columnMachineOS" msprop:Generator_ColumnPropNameInRow="MachineOS" msprop:Generator_ColumnPropNameInTable="MachineOSColumn" msprop:Generator_UserColumnName="MachineOS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Machine_x0020_MQ" msprop:Generator_TableClassName="Machine_MQDataTable" msprop:Generator_TableVarName="tableMachine_MQ" msprop:Generator_TablePropName="Machine_MQ" msprop:Generator_RowDeletingName="Machine_MQRowDeleting" msprop:Generator_RowChangingName="Machine_MQRowChanging" msprop:Generator_RowEvHandlerName="Machine_MQRowChangeEventHandler" msprop:Generator_RowDeletedName="Machine_MQRowDeleted" msprop:Generator_UserTableName="Machine MQ" msprop:Generator_RowChangedName="Machine_MQRowChanged" msprop:Generator_RowEvArgName="Machine_MQRowChangeEvent" msprop:Generator_RowClassName="Machine_MQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MachineID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMachineID" msprop:Generator_ColumnPropNameInRow="MachineID" msprop:Generator_ColumnPropNameInTable="MachineIDColumn" msprop:Generator_UserColumnName="MachineID" type="xs:int" />
+              <xs:element name="MachineName" msprop:Generator_ColumnVarNameInTable="columnMachineName" msprop:Generator_ColumnPropNameInRow="MachineName" msprop:Generator_ColumnPropNameInTable="MachineNameColumn" msprop:Generator_UserColumnName="MachineName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MachineIP" msprop:Generator_ColumnVarNameInTable="columnMachineIP" msprop:Generator_ColumnPropNameInRow="MachineIP" msprop:Generator_ColumnPropNameInTable="MachineIPColumn" msprop:Generator_UserColumnName="MachineIP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MachineTypeID" msprop:Generator_ColumnVarNameInTable="columnMachineTypeID" msprop:Generator_ColumnPropNameInRow="MachineTypeID" msprop:Generator_ColumnPropNameInTable="MachineTypeIDColumn" msprop:Generator_UserColumnName="MachineTypeID" type="xs:int" minOccurs="0" />
+              <xs:element name="MachineOSID" msprop:Generator_ColumnVarNameInTable="columnMachineOSID" msprop:Generator_ColumnPropNameInRow="MachineOSID" msprop:Generator_ColumnPropNameInTable="MachineOSIDColumn" msprop:Generator_UserColumnName="MachineOSID" type="xs:int" minOccurs="0" />
+              <xs:element name="MachineHostID" msprop:Generator_ColumnVarNameInTable="columnMachineHostID" msprop:Generator_ColumnPropNameInRow="MachineHostID" msprop:Generator_ColumnPropNameInTable="MachineHostIDColumn" msprop:Generator_UserColumnName="MachineHostID" type="xs:int" minOccurs="0" />
+              <xs:element name="Virtual" msprop:Generator_ColumnVarNameInTable="columnVirtual" msprop:Generator_ColumnPropNameInRow="Virtual" msprop:Generator_ColumnPropNameInTable="VirtualColumn" msprop:Generator_UserColumnName="Virtual" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MachineHost_x0020_MQ" msprop:Generator_TableClassName="MachineHost_MQDataTable" msprop:Generator_TableVarName="tableMachineHost_MQ" msprop:Generator_TablePropName="MachineHost_MQ" msprop:Generator_RowDeletingName="MachineHost_MQRowDeleting" msprop:Generator_RowChangingName="MachineHost_MQRowChanging" msprop:Generator_RowEvHandlerName="MachineHost_MQRowChangeEventHandler" msprop:Generator_RowDeletedName="MachineHost_MQRowDeleted" msprop:Generator_UserTableName="MachineHost MQ" msprop:Generator_RowChangedName="MachineHost_MQRowChanged" msprop:Generator_RowEvArgName="MachineHost_MQRowChangeEvent" msprop:Generator_RowClassName="MachineHost_MQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MachineHostID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMachineHostID" msprop:Generator_ColumnPropNameInRow="MachineHostID" msprop:Generator_ColumnPropNameInTable="MachineHostIDColumn" msprop:Generator_UserColumnName="MachineHostID" type="xs:int" />
+              <xs:element name="MachineID" msprop:Generator_ColumnVarNameInTable="columnMachineID" msprop:Generator_ColumnPropNameInRow="MachineID" msprop:Generator_ColumnPropNameInTable="MachineIDColumn" msprop:Generator_UserColumnName="MachineID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MachineOS_x0020_MQ" msprop:Generator_TableClassName="MachineOS_MQDataTable" msprop:Generator_TableVarName="tableMachineOS_MQ" msprop:Generator_TablePropName="MachineOS_MQ" msprop:Generator_RowDeletingName="MachineOS_MQRowDeleting" msprop:Generator_RowChangingName="MachineOS_MQRowChanging" msprop:Generator_RowEvHandlerName="MachineOS_MQRowChangeEventHandler" msprop:Generator_RowDeletedName="MachineOS_MQRowDeleted" msprop:Generator_UserTableName="MachineOS MQ" msprop:Generator_RowChangedName="MachineOS_MQRowChanged" msprop:Generator_RowEvArgName="MachineOS_MQRowChangeEvent" msprop:Generator_RowClassName="MachineOS_MQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MachineOSID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMachineOSID" msprop:Generator_ColumnPropNameInRow="MachineOSID" msprop:Generator_ColumnPropNameInTable="MachineOSIDColumn" msprop:Generator_UserColumnName="MachineOSID" type="xs:int" />
+              <xs:element name="MachineOS" msprop:Generator_ColumnVarNameInTable="columnMachineOS" msprop:Generator_ColumnPropNameInRow="MachineOS" msprop:Generator_ColumnPropNameInTable="MachineOSColumn" msprop:Generator_UserColumnName="MachineOS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MachineType_x0020_MQ" msprop:Generator_TableClassName="MachineType_MQDataTable" msprop:Generator_TableVarName="tableMachineType_MQ" msprop:Generator_TablePropName="MachineType_MQ" msprop:Generator_RowDeletingName="MachineType_MQRowDeleting" msprop:Generator_RowChangingName="MachineType_MQRowChanging" msprop:Generator_RowEvHandlerName="MachineType_MQRowChangeEventHandler" msprop:Generator_RowDeletedName="MachineType_MQRowDeleted" msprop:Generator_UserTableName="MachineType MQ" msprop:Generator_RowChangedName="MachineType_MQRowChanged" msprop:Generator_RowEvArgName="MachineType_MQRowChangeEvent" msprop:Generator_RowClassName="MachineType_MQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MachineTypeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMachineTypeID" msprop:Generator_ColumnPropNameInRow="MachineTypeID" msprop:Generator_ColumnPropNameInTable="MachineTypeIDColumn" msprop:Generator_UserColumnName="MachineTypeID" type="xs:int" />
+              <xs:element name="MachineType" msprop:Generator_ColumnVarNameInTable="columnMachineType" msprop:Generator_ColumnPropNameInRow="MachineType" msprop:Generator_ColumnPropNameInTable="MachineTypeColumn" msprop:Generator_UserColumnName="MachineType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MachineUpdate_x0020_MQ" msprop:Generator_TableClassName="MachineUpdate_MQDataTable" msprop:Generator_TableVarName="tableMachineUpdate_MQ" msprop:Generator_TablePropName="MachineUpdate_MQ" msprop:Generator_RowDeletingName="MachineUpdate_MQRowDeleting" msprop:Generator_RowChangingName="MachineUpdate_MQRowChanging" msprop:Generator_RowEvHandlerName="MachineUpdate_MQRowChangeEventHandler" msprop:Generator_RowDeletedName="MachineUpdate_MQRowDeleted" msprop:Generator_UserTableName="MachineUpdate MQ" msprop:Generator_RowChangedName="MachineUpdate_MQRowChanged" msprop:Generator_RowEvArgName="MachineUpdate_MQRowChangeEvent" msprop:Generator_RowClassName="MachineUpdate_MQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UpdateID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUpdateID" msprop:Generator_ColumnPropNameInRow="UpdateID" msprop:Generator_ColumnPropNameInTable="UpdateIDColumn" msprop:Generator_UserColumnName="UpdateID" type="xs:int" />
+              <xs:element name="MachineID" msprop:Generator_ColumnVarNameInTable="columnMachineID" msprop:Generator_ColumnPropNameInRow="MachineID" msprop:Generator_ColumnPropNameInTable="MachineIDColumn" msprop:Generator_UserColumnName="MachineID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OS_x0020_LQ" msprop:Generator_TableClassName="OS_LQDataTable" msprop:Generator_TableVarName="tableOS_LQ" msprop:Generator_TablePropName="OS_LQ" msprop:Generator_RowDeletingName="OS_LQRowDeleting" msprop:Generator_RowChangingName="OS_LQRowChanging" msprop:Generator_RowEvHandlerName="OS_LQRowChangeEventHandler" msprop:Generator_RowDeletedName="OS_LQRowDeleted" msprop:Generator_UserTableName="OS LQ" msprop:Generator_RowChangedName="OS_LQRowChanged" msprop:Generator_RowEvArgName="OS_LQRowChangeEvent" msprop:Generator_RowClassName="OS_LQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MachineOSID" msprop:Generator_ColumnVarNameInTable="columnMachineOSID" msprop:Generator_ColumnPropNameInRow="MachineOSID" msprop:Generator_ColumnPropNameInTable="MachineOSIDColumn" msprop:Generator_UserColumnName="MachineOSID" type="xs:int" minOccurs="0" />
+              <xs:element name="MachineOS" msprop:Generator_ColumnVarNameInTable="columnMachineOS" msprop:Generator_ColumnPropNameInRow="MachineOS" msprop:Generator_ColumnPropNameInTable="MachineOSColumn" msprop:Generator_UserColumnName="MachineOS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Type_x0020_LQ" msprop:Generator_TableClassName="Type_LQDataTable" msprop:Generator_TableVarName="tableType_LQ" msprop:Generator_TablePropName="Type_LQ" msprop:Generator_RowDeletingName="Type_LQRowDeleting" msprop:Generator_RowChangingName="Type_LQRowChanging" msprop:Generator_RowEvHandlerName="Type_LQRowChangeEventHandler" msprop:Generator_RowDeletedName="Type_LQRowDeleted" msprop:Generator_UserTableName="Type LQ" msprop:Generator_RowChangedName="Type_LQRowChanged" msprop:Generator_RowEvArgName="Type_LQRowChangeEvent" msprop:Generator_RowClassName="Type_LQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MachineTypeID" msprop:Generator_ColumnVarNameInTable="columnMachineTypeID" msprop:Generator_ColumnPropNameInRow="MachineTypeID" msprop:Generator_ColumnPropNameInTable="MachineTypeIDColumn" msprop:Generator_UserColumnName="MachineTypeID" type="xs:int" minOccurs="0" />
+              <xs:element name="MachineType" msprop:Generator_ColumnVarNameInTable="columnMachineType" msprop:Generator_ColumnPropNameInRow="MachineType" msprop:Generator_ColumnPropNameInTable="MachineTypeColumn" msprop:Generator_UserColumnName="MachineType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Update_x0020_LQ" msprop:Generator_TableClassName="Update_LQDataTable" msprop:Generator_TableVarName="tableUpdate_LQ" msprop:Generator_TablePropName="Update_LQ" msprop:Generator_RowDeletingName="Update_LQRowDeleting" msprop:Generator_RowChangingName="Update_LQRowChanging" msprop:Generator_RowEvHandlerName="Update_LQRowChangeEventHandler" msprop:Generator_RowDeletedName="Update_LQRowDeleted" msprop:Generator_UserTableName="Update LQ" msprop:Generator_RowChangedName="Update_LQRowChanged" msprop:Generator_RowEvArgName="Update_LQRowChangeEvent" msprop:Generator_RowClassName="Update_LQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MachineID" msprop:Generator_ColumnVarNameInTable="columnMachineID" msprop:Generator_ColumnPropNameInRow="MachineID" msprop:Generator_ColumnPropNameInTable="MachineIDColumn" msprop:Generator_UserColumnName="MachineID" type="xs:int" minOccurs="0" />
+              <xs:element name="MachineIP" msprop:Generator_ColumnVarNameInTable="columnMachineIP" msprop:Generator_ColumnPropNameInRow="MachineIP" msprop:Generator_ColumnPropNameInTable="MachineIPColumn" msprop:Generator_UserColumnName="MachineIP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MachineTypeID" msprop:Generator_ColumnVarNameInTable="columnMachineTypeID" msprop:Generator_ColumnPropNameInRow="MachineTypeID" msprop:Generator_ColumnPropNameInTable="MachineTypeIDColumn" msprop:Generator_UserColumnName="MachineTypeID" type="xs:int" minOccurs="0" />
+              <xs:element name="MachineOSID" msprop:Generator_ColumnVarNameInTable="columnMachineOSID" msprop:Generator_ColumnPropNameInRow="MachineOSID" msprop:Generator_ColumnPropNameInTable="MachineOSIDColumn" msprop:Generator_UserColumnName="MachineOSID" type="xs:int" minOccurs="0" />
+              <xs:element name="MachineHostID" msprop:Generator_ColumnVarNameInTable="columnMachineHostID" msprop:Generator_ColumnPropNameInRow="MachineHostID" msprop:Generator_ColumnPropNameInTable="MachineHostIDColumn" msprop:Generator_UserColumnName="MachineHostID" type="xs:int" minOccurs="0" />
+              <xs:element name="Virtual" msprop:Generator_ColumnVarNameInTable="columnVirtual" msprop:Generator_ColumnPropNameInRow="Virtual" msprop:Generator_ColumnPropNameInTable="VirtualColumn" msprop:Generator_UserColumnName="Virtual" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UpdateNotes_x0020_LQ" msprop:Generator_TableClassName="UpdateNotes_LQDataTable" msprop:Generator_TableVarName="tableUpdateNotes_LQ" msprop:Generator_TablePropName="UpdateNotes_LQ" msprop:Generator_RowDeletingName="UpdateNotes_LQRowDeleting" msprop:Generator_RowChangingName="UpdateNotes_LQRowChanging" msprop:Generator_RowEvHandlerName="UpdateNotes_LQRowChangeEventHandler" msprop:Generator_RowDeletedName="UpdateNotes_LQRowDeleted" msprop:Generator_UserTableName="UpdateNotes LQ" msprop:Generator_RowChangedName="UpdateNotes_LQRowChanged" msprop:Generator_RowEvArgName="UpdateNotes_LQRowChangeEvent" msprop:Generator_RowClassName="UpdateNotes_LQRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UpdateID" msprop:Generator_ColumnVarNameInTable="columnUpdateID" msprop:Generator_ColumnPropNameInRow="UpdateID" msprop:Generator_ColumnPropNameInTable="UpdateIDColumn" msprop:Generator_UserColumnName="UpdateID" type="xs:int" minOccurs="0" />
+              <xs:element name="MachineID" msprop:Generator_ColumnVarNameInTable="columnMachineID" msprop:Generator_ColumnPropNameInRow="MachineID" msprop:Generator_ColumnPropNameInTable="MachineIDColumn" msprop:Generator_UserColumnName="MachineID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UpdateNotes_x0020_MQ" />
+      <xs:field xpath="mstns:UpdateNoteID" />
+    </xs:unique>
+    <xs:unique name="Machine_x0020_MQ_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Machine_x0020_MQ" />
+      <xs:field xpath="mstns:MachineID" />
+    </xs:unique>
+    <xs:unique name="MachineHost_x0020_MQ_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MachineHost_x0020_MQ" />
+      <xs:field xpath="mstns:MachineHostID" />
+    </xs:unique>
+    <xs:unique name="MachineOS_x0020_MQ_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MachineOS_x0020_MQ" />
+      <xs:field xpath="mstns:MachineOSID" />
+    </xs:unique>
+    <xs:unique name="MachineType_x0020_MQ_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MachineType_x0020_MQ" />
+      <xs:field xpath="mstns:MachineTypeID" />
+    </xs:unique>
+    <xs:unique name="MachineUpdate_x0020_MQ_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MachineUpdate_x0020_MQ" />
+      <xs:field xpath="mstns:UpdateID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
