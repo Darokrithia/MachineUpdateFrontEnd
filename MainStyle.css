@@ -14,7 +14,7 @@ div#ContentDiv {
 }
 div#NavDiv {
     background-color: #AAFFFF;
-    min-height: 40px;
+    min-height: 30px;
     width: 100%;
 }
 div#NavDiv ul {
@@ -22,15 +22,28 @@ div#NavDiv ul {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
+    list-style-type:none;
 }
-div#NavDiv ul li{
+div#NavDiv ul li {
     width: 33%;
     margin-right: auto;
-    margin-left:auto;
+    margin-left: auto;
     margin-top: -5px;
     height: 40px;
     padding: 0px;
-    background-color: #99DDDD
 }
-div#NavDiv ul li a{
+div#NavDiv ul li a {
+    background-color: #22BBBB;
+    color: #FFFFFF;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align:center;
+    font-size: 25px;
+    font-family:Britannic;
+    text-decoration:none;
+}
+div#NavDiv ul li a:hover{
+    background-color: #FFFFFF;
+    color: #000000;
 }
