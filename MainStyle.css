@@ -10,9 +10,27 @@ div#ContentDiv {
     overflow-y:auto;
     margin:auto;
     border-radius: 20px;
+    padding: 0px;
 }
 div#NavDiv {
     background-color: #AAFFFF;
-    height: 40px;
+    min-height: 40px;
     width: 100%;
+}
+div#NavDiv ul {
+    margin-top: -5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+div#NavDiv ul li{
+    width: 33%;
+    margin-right: auto;
+    margin-left:auto;
+    margin-top: -5px;
+    height: 40px;
+    padding: 0px;
+    background-color: #99DDDD
+}
+div#NavDiv ul li a{
 }

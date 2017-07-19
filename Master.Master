@@ -14,7 +14,11 @@
     <form id="form1" runat="server">
         <div id="ContentDiv">
             <div id = "NavDiv">
-
+                <ul>
+                    <li>
+                        <a href ="Report.aspx">Reports</a>
+                    </li>
+                </ul>
             </div>
             <asp:ContentPlaceHolder ID="body" runat="server">
 
