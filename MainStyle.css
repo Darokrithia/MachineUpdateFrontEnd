@@ -9,4 +9,10 @@ div#ContentDiv {
     min-height: 100px;
     overflow-y:auto;
     margin:auto;
+    border-radius: 20px;
+}
+div#NavDiv {
+    background-color: #AAFFFF;
+    height: 40px;
+    width: 100%;
 }

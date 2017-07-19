@@ -13,6 +13,9 @@
 <body>
     <form id="form1" runat="server">
         <div id="ContentDiv">
+            <div id = "NavDiv">
+
+            </div>
             <asp:ContentPlaceHolder ID="body" runat="server">
 
             </asp:ContentPlaceHolder>
