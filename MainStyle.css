@@ -5,6 +5,8 @@ div#ContentDiv {
     background-color: #DDDDFF;
     height: auto;
     width: 90%;
+    height: 97vh;
+    min-height: 100px;
+    overflow-y:auto;
     margin:auto;
-    padding: 10px;
 }
