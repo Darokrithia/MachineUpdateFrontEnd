@@ -1,0 +1,10 @@
+﻿body {
+    background-color: #AAAADD;
+}
+div#ContentDiv {
+    background-color: #DDDDFF;
+    height: auto;
+    width: 90%;
+    margin:auto;
+    padding: 10px;
+}
