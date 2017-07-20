@@ -16,7 +16,12 @@ namespace MachineUpdateFrontEnd
 
         protected void ShowMachines(object sender, EventArgs e)
         {
-            MachineTable.Visible = (MachineTable.Visible == false);
+            MachineGrid.Visible = (MachineGrid.Visible == false);
+        }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
         }
     }
 }
