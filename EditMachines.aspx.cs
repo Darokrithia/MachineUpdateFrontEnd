@@ -23,5 +23,10 @@ namespace MachineUpdateFrontEnd
         {
 
         }
+
+        protected void MachineGrid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
