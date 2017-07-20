@@ -16,28 +16,31 @@ div#NavDiv {
     background-color: #AAFFFF;
     min-height: 30px;
     width: 100%;
+    text-align: center;
+    position:center;
 }
 div#NavDiv ul {
+    padding: 0;
+    margin: 0;
     margin-top: -5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
     list-style-type:none;
 }
 div#NavDiv ul li {
-    width: 33%;
-    margin-right: auto;
-    margin-left: auto;
+    width: 30%;
     margin-top: -5px;
-    height: 40px;
+    height: 50px;
     padding: 0px;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
 }
 div#NavDiv ul li a {
     background-color: #22BBBB;
     color: #FFFFFF;
     display: inline-block;
-    width: 100%;
-    height: 100%;
+    width: inherit;
+    height: inherit;
+    padding-top:10px;
     text-align:center;
     font-size: 25px;
     font-family:Britannic;

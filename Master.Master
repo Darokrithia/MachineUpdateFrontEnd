@@ -18,6 +18,13 @@
                     <li>
                         <a href ="Report.aspx">Reports</a>
                     </li>
+                    <li>
+                        <a href ="NewUpdate.aspx">New Update</a>
+                    </li>
+                    
+                    <li>
+                        <a href ="EditMachines.aspx">Edit Machines</a>
+                    </li>
                 </ul>
             </div>
             <asp:ContentPlaceHolder ID="body" runat="server">
