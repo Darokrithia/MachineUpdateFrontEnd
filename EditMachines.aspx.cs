@@ -11,7 +11,12 @@ namespace MachineUpdateFrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        protected void ShowMachines(object sender, EventArgs e)
+        {
+            MachineTable.Visible = (MachineTable.Visible == false);
         }
     }
 }
