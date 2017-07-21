@@ -1,80 +1,114 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="EditMachines.aspx.cs" Inherits="MachineUpdateFrontEnd.EditMachines" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="EditMachines.aspx.cs" Inherits="MachineUpdateFrontEnd.EditMachines"%>
 <asp:Content ID="HeadContent" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="body" runat="server">
     <asp:Button ID ="MachineButton" Text="Machines" OnClick="ShowMachines" runat ="server"/>
-    <asp:GridView ID ="MachineGrid" Visible="false" CssClass = "table" runat="server" ShowHeaderWhenEmpty="true" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MachineID" DataSourceID="SqlDataSource1" ShowFooter="True" >
+    <asp:GridView ID ="MachineGrid" Autogeneratecolumns="false" Visible="false" CssClass = "table" runat="server" ShowHeaderWhenEmpty="true" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MachineID" DataSourceID="SqlDataSource1" ShowFooter="True" >
         <AlternatingRowStyle BackColor="#F7F7F7" />
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
-            <asp:TemplateField HeaderText="MachineID" InsertVisible="False" SortExpression="MachineID">
+            <asp:TemplateField HeaderText="Machine ID" InsertVisible="False" SortExpression="MachineID">
                 <EditItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("MachineID") %>'></asp:Label>
+                    <asp:Label ID="Label10" runat="server" Text='<%# Eval("MachineID") %>'></asp:Label>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label5" runat="server" Text='<%# Bind("MachineID") %>'></asp:Label>
                 </ItemTemplate>
+                <FooterTemplate>
+                    <asp:Button ID ="SubmitButton" Text="Submit" runat="server"/>
+                </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="MachineName" SortExpression="MachineName">
+            <asp:TemplateField HeaderText="Machine Name" SortExpression="MachineName">
                 <EditItemTemplate>
                     <asp:TextBox ID="MachineNameTextBox" runat="server" Text='<%# Bind("MachineName") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("MachineName") %>'></asp:Label>
                 </ItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID = "MachineNameEnteryTextBox" runat = "server"></asp:TextBox>
+                </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="MachineIP" SortExpression="MachineIP">
+            <asp:TemplateField HeaderText="Machine IP" SortExpression="MachineIP">
                 <EditItemTemplate>
                     <asp:TextBox ID="MachineIPTextBox" runat="server" Text='<%# Bind("MachineIP") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("MachineIP") %>'></asp:Label>
                 </ItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID ="MachineIPTextBox" runat ="server"></asp:TextBox>
+                </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="MachineOSID" SortExpression="MachineOSID">
                 <EditItemTemplate>
                     <asp:DropDownList ID = "OSDropDownList" runat="server" SelectedValue = '<%# Bind("MachineOSID") %>'>
-                        <asp:ListItem>Select OS</asp:ListItem>
-                        <asp:ListItem>Mac</asp:ListItem>
-                        <asp:ListItem>Windows</asp:ListItem>
+                        <asp:ListItem>0</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
                     </asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label3" runat="server" Text='<%# Bind("MachineOSID") %>'></asp:Label>
                 </ItemTemplate>
+                <FooterTemplate>
+                    <asp:DropDownList ID = "OSEntryDropDownList" runat="server">
+                        <asp:ListItem>0</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                    </asp:DropDownList>
+                </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="MachineTypeID" SortExpression="MachineTypeID">
+            <asp:TemplateField HeaderText="Machine Type" SortExpression="MachineTypeID">
                 <EditItemTemplate>
                     <asp:DropDownList ID="MachineTypeDropDown" runat="server" SelectedValue='<%# Bind("MachineTypeID") %>'>
-                        <asp:ListItem>Select Type of Machine</asp:ListItem>
-                        <asp:ListItem>PC</asp:ListItem>
-                        <asp:ListItem>Laptop</asp:ListItem>
-                        <asp:ListItem>Virtual</asp:ListItem>
+                        <asp:ListItem>0</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
                     </asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("MachineTypeID") %>'></asp:Label>
                 </ItemTemplate>
+                <FooterTemplate>
+                    <asp:DropDownList ID="MachineTypeEntryDropDown" runat="server">
+                        <asp:ListItem>0</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                    </asp:DropDownList>
+                </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Virtual" SortExpression="Virtual">
                 <EditItemTemplate>
                     <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("Virtual") %>' />
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("Virtual") %>' Enabled="false" />
+                    <asp:CheckBox ID="CheckBox2" runat="server" Checked='<%# Bind("Virtual") %>' Enabled="false" />
                 </ItemTemplate>
+                <FooterTemplate>
+                    <asp:CheckBox ID="VirtualEntryCheckBox" runat="server" Checked ="false" Enabled="false"/>
+                </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="MachineHostID" SortExpression="MachineHostID">
+            <asp:TemplateField HeaderText="Machine Host" SortExpression="MachineHostID">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="HostDropDown" runat="server" SelectedValue='<%# Bind("MachineHostID") %>'>
-                        <asp:ListItem>Select Item</asp:ListItem>
-                        <asp:ListItem>This</asp:ListItem>
-                        <asp:ListItem>That</asp:ListItem>
+                    <asp:DropDownList ID="HostDropDown" runat="server" SelectedValue='<%# "0" %>'>
+                        <asp:ListItem Text ="Select Host">0</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
                     </asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label6" runat="server" Text='<%# Bind("MachineHostID") %>'></asp:Label>
                 </ItemTemplate>
+                <FooterTemplate>
+                    <asp:DropDownList ID="HostEntryDropDown" runat="server">
+                        <asp:ListItem Text ="Select Host">0</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                    </asp:DropDownList>
+                </FooterTemplate>
             </asp:TemplateField>
         </Columns>
         <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />

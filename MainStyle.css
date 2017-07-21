@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: #AAAADD;
+    background-color: #5555DD;
 }
 div#ContentDiv {
     background-color: #DDDDFF;
@@ -13,7 +13,7 @@ div#ContentDiv {
     padding: 0px;
 }
 div#NavDiv {
-    background-color: #AAFFFF;
+    background-color: #22BBBB;
     min-height: 30px;
     width: 100%;
     text-align: center;
