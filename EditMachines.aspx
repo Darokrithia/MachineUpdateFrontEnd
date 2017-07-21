@@ -21,32 +21,47 @@
             <asp:TemplateField HeaderText="Machine Name" SortExpression="MachineName">
                 <EditItemTemplate>
                     <asp:TextBox ID="MachineNameTextBox" runat="server" Text='<%# Bind("MachineName") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID = "NameEditValidator" runat="server" ErrorMessage = "Error Name is a required Field"
+                        ControlToValidate ="MachineNameTextBox" Text = "*" ForeColor ="Red">
+                    </asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("MachineName") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID = "MachineNameEnteryTextBox" runat = "server"></asp:TextBox>
+                    <asp:TextBox ID = "MachineNameEntryTextBox" runat = "server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID = "NameEntryValidator" runat="server" ErrorMessage = "Error Name is a required Field"
+                        ControlToValidate ="MachineNameEntryTextBox" Text = "*" ForeColor ="Red">
+                    </asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Machine IP" SortExpression="MachineIP">
                 <EditItemTemplate>
                     <asp:TextBox ID="MachineIPTextBox" runat="server" Text='<%# Bind("MachineIP") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID = "IPEditValidator" runat="server" ErrorMessage = "Error IP address is a required Field"
+                        ControlToValidate ="MachineIPTextBox" Text = "*" ForeColor ="Red">
+                    </asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("MachineIP") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID ="MachineIPTextBox" runat ="server"></asp:TextBox>
+                    <asp:TextBox ID ="MachineIPEntryTextBox" runat ="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID = "IPEntryValidator" runat="server" ErrorMessage = "Error IP address is a required Field"
+                        ControlToValidate ="MachineIPEntryTextBox" Text = "*" ForeColor ="Red">
+                    </asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="MachineOSID" SortExpression="MachineOSID">
                 <EditItemTemplate>
                     <asp:DropDownList ID = "OSDropDownList" runat="server" SelectedValue = '<%# Bind("MachineOSID") %>'>
-                        <asp:ListItem>0</asp:ListItem>
+                        <asp:ListItem Text ="Select OS" Value ="0"></asp:ListItem>
                         <asp:ListItem>1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID = "OSEditValidator" runat="server" ErrorMessage = "Error OS is a required Field"
+                        ControlToValidate ="OSDropDownList" Text = "*" ForeColor ="Red" InitialValue='<%# "0" %>'>
+                    </asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label3" runat="server" Text='<%# Bind("MachineOSID") %>'></asp:Label>
@@ -57,6 +72,9 @@
                         <asp:ListItem>1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID = "OSEntryValidator" runat="server" ErrorMessage = "Error OS is a required Field"
+                        ControlToValidate ="OSEntryDropDownList" Text = "*" ForeColor ="Red" InitialValue='<%# "0" %>'>
+                    </asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Machine Type" SortExpression="MachineTypeID">
@@ -67,6 +85,9 @@
                         <asp:ListItem>2</asp:ListItem>
                         <asp:ListItem>3</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID = "MachineTypeEditValidator" runat="server" ErrorMessage = "Error Hardware is a required Field"
+                        ControlToValidate ="MachineTypeDropDown" Text = "*" ForeColor ="Red" InitialValue='<%# "0" %>'>
+                    </asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("MachineTypeID") %>'></asp:Label>
@@ -78,6 +99,9 @@
                         <asp:ListItem>2</asp:ListItem>
                         <asp:ListItem>3</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID = "MachineTypeEntryValidator" runat="server" ErrorMessage = "Error Hardware is a required Field"
+                        ControlToValidate ="MachineTypeEntryDropDown" Text = "*" ForeColor ="Red" InitialValue='<%# "0" %>'>
+                    </asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Virtual" SortExpression="Virtual">
@@ -88,7 +112,7 @@
                     <asp:CheckBox ID="CheckBox2" runat="server" Checked='<%# Bind("Virtual") %>' Enabled="false" />
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:CheckBox ID="VirtualEntryCheckBox" runat="server" Checked ="false" Enabled="false"/>
+                    <asp:CheckBox ID="VirtualEntryCheckBox" runat="server" Checked ="false"/>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Machine Host" SortExpression="MachineHostID">
@@ -121,6 +145,7 @@
         <SortedDescendingCellStyle BackColor="#D8D8F0" />
         <SortedDescendingHeaderStyle BackColor="#3E3277" />
     </asp:GridView>
+    <asp:ValidationSummary ID ="ErrorMessages" ForeColor="Red" runat="server"/>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MachineUpdateDataBaseConnectionString %>" DeleteCommand="DELETE FROM [Machine] WHERE [MachineID] = @MachineID" InsertCommand="INSERT INTO [Machine] ([MachineName], [MachineIP], [MachineOSID], [MachineTypeID], [Virtual], [MachineHostID]) VALUES (@MachineName, @MachineIP, @MachineOSID, @MachineTypeID, @Virtual, @MachineHostID)" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT [MachineID], [MachineName], [MachineIP], [MachineOSID], [MachineTypeID], [Virtual], [MachineHostID] FROM [Machine]" UpdateCommand="UPDATE [Machine] SET [MachineName] = @MachineName, [MachineIP] = @MachineIP, [MachineOSID] = @MachineOSID, [MachineTypeID] = @MachineTypeID, [Virtual] = @Virtual, [MachineHostID] = @MachineHostID WHERE [MachineID] = @MachineID">
         <DeleteParameters>
             <asp:Parameter Name="MachineID" Type="Int32" />
