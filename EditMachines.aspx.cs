@@ -28,5 +28,10 @@ namespace MachineUpdateFrontEnd
         {
 
         }
+
+        protected void SubmitButtonClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

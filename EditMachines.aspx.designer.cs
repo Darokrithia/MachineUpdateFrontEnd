@@ -31,13 +31,22 @@ namespace MachineUpdateFrontEnd {
         protected global::System.Web.UI.WebControls.GridView MachineGrid;
         
         /// <summary>
-        /// Error Messages control.
+        /// EditErrprMessages control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ErrorMessages;
+        protected global::System.Web.UI.WebControls.ValidationSummary EditErrprMessages;
+        
+        /// <summary>
+        /// EntryErrorMessages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary EntryErrorMessages;
         
         /// <summary>
         /// SqlDataSource1 control.

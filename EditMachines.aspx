@@ -15,7 +15,7 @@
                     <asp:Label ID="Label5" runat="server" Text='<%# Bind("MachineID") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:Button ID ="SubmitButton" Text="Submit" runat="server"/>
+                    <asp:Button ID ="SubmitButton" ValidationGroup = "EntryVG" OnClick="SubmitButtonClick" Text="Submit" runat="server"/>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Machine Name" SortExpression="MachineName">
@@ -30,7 +30,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID = "MachineNameEntryTextBox" runat = "server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID = "NameEntryValidator" runat="server" ErrorMessage = "Error Name is a required Field"
+                    <asp:RequiredFieldValidator ID = "NameEntryValidator" ValidationGroup = "EntryVG" runat="server" ErrorMessage = "Error Name is a required Field"
                         ControlToValidate ="MachineNameEntryTextBox" Text = "*" ForeColor ="Red">
                     </asp:RequiredFieldValidator>
                 </FooterTemplate>
@@ -47,7 +47,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID ="MachineIPEntryTextBox" runat ="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID = "IPEntryValidator" runat="server" ErrorMessage = "Error IP address is a required Field"
+                    <asp:RequiredFieldValidator ID = "IPEntryValidator" ValidationGroup = "EntryVG" runat="server" ErrorMessage = "Error IP address is a required Field"
                         ControlToValidate ="MachineIPEntryTextBox" Text = "*" ForeColor ="Red">
                     </asp:RequiredFieldValidator>
                 </FooterTemplate>
@@ -72,7 +72,7 @@
                         <asp:ListItem>1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator ID = "OSEntryValidator" runat="server" ErrorMessage = "Error OS is a required Field"
+                    <asp:RequiredFieldValidator ID = "OSEntryValidator" ValidationGroup = "EntryVG" runat="server" ErrorMessage = "Error OS is a required Field"
                         ControlToValidate ="OSEntryDropDownList" Text = "*" ForeColor ="Red" InitialValue='<%# "0" %>'>
                     </asp:RequiredFieldValidator>
                 </FooterTemplate>
@@ -99,7 +99,7 @@
                         <asp:ListItem>2</asp:ListItem>
                         <asp:ListItem>3</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:RequiredFieldValidator ID = "MachineTypeEntryValidator" runat="server" ErrorMessage = "Error Hardware is a required Field"
+                    <asp:RequiredFieldValidator ID = "MachineTypeEntryValidator" ValidationGroup = "EntryVG" runat="server" ErrorMessage = "Error Hardware is a required Field"
                         ControlToValidate ="MachineTypeEntryDropDown" Text = "*" ForeColor ="Red" InitialValue='<%# "0" %>'>
                     </asp:RequiredFieldValidator>
                 </FooterTemplate>
@@ -145,7 +145,8 @@
         <SortedDescendingCellStyle BackColor="#D8D8F0" />
         <SortedDescendingHeaderStyle BackColor="#3E3277" />
     </asp:GridView>
-    <asp:ValidationSummary ID ="ErrorMessages" ForeColor="Red" runat="server"/>
+    <asp:ValidationSummary ID = "EditErrprMessages" ForeColor="Red" runat="server"/>
+    <asp:ValidationSummary ID = "EntryErrorMessages" ValidationGroup = "EntryVG" ForeColor="Red" runat="server"/>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MachineUpdateDataBaseConnectionString %>" DeleteCommand="DELETE FROM [Machine] WHERE [MachineID] = @MachineID" InsertCommand="INSERT INTO [Machine] ([MachineName], [MachineIP], [MachineOSID], [MachineTypeID], [Virtual], [MachineHostID]) VALUES (@MachineName, @MachineIP, @MachineOSID, @MachineTypeID, @Virtual, @MachineHostID)" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT [MachineID], [MachineName], [MachineIP], [MachineOSID], [MachineTypeID], [Virtual], [MachineHostID] FROM [Machine]" UpdateCommand="UPDATE [Machine] SET [MachineName] = @MachineName, [MachineIP] = @MachineIP, [MachineOSID] = @MachineOSID, [MachineTypeID] = @MachineTypeID, [Virtual] = @Virtual, [MachineHostID] = @MachineHostID WHERE [MachineID] = @MachineID">
         <DeleteParameters>
             <asp:Parameter Name="MachineID" Type="Int32" />
