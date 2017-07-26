@@ -22,6 +22,15 @@ namespace MachineUpdateFrontEnd {
         protected global::System.Web.UI.WebControls.Button MachineButton;
         
         /// <summary>
+        /// OSButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button OSButton;
+        
+        /// <summary>
         /// MachineGrid control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace MachineUpdateFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView MachineGrid;
+        
+        /// <summary>
+        /// OSGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView OSGridView;
         
         /// <summary>
         /// EditErrprMessages control.
@@ -49,12 +67,21 @@ namespace MachineUpdateFrontEnd {
         protected global::System.Web.UI.WebControls.ValidationSummary EntryErrorMessages;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// SqlDataSourceOS control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceOS;
+        
+        /// <summary>
+        /// SqlDataSourceMachine control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceMachine;
     }
 }

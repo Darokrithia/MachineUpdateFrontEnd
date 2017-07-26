@@ -16,10 +16,20 @@ namespace MachineUpdateFrontEnd
 
         protected void ShowMachines(object sender, EventArgs e)
         {
+            OSGridView.Visible = false;
             MachineGrid.Visible = (MachineGrid.Visible == false);
         }
+        protected void ShowOS(object sender, EventArgs e)
+        {
+            MachineGrid.Visible = false;
+            OSGridView.Visible = (OSGridView.Visible == false);
+        }
 
-        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        protected void SqlDataSourceOS_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+        protected void SqlDataSourceMachine_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
 
         }
@@ -31,19 +41,19 @@ namespace MachineUpdateFrontEnd
 
         protected void SubmitButtonClick(object sender, EventArgs e)
         {
-            SqlDataSource1.InsertParameters["MachineName"].DefaultValue =
+            SqlDataSourceMachine.InsertParameters["MachineName"].DefaultValue =
                 ((TextBox)MachineGrid.FooterRow.FindControl("MachineNameEntryTextBox")).Text;
-            SqlDataSource1.InsertParameters["MachineIP"].DefaultValue =
+            SqlDataSourceMachine.InsertParameters["MachineIP"].DefaultValue =
                 ((TextBox)MachineGrid.FooterRow.FindControl("MachineIPEntryTextBox")).Text;
-            SqlDataSource1.InsertParameters["MachineOSID"].DefaultValue =
+            SqlDataSourceMachine.InsertParameters["MachineOSID"].DefaultValue =
                 ((DropDownList)MachineGrid.FooterRow.FindControl("OSEntryDropDownList")).SelectedValue;
-            SqlDataSource1.InsertParameters["MachineTypeID"].DefaultValue =
+            SqlDataSourceMachine.InsertParameters["MachineTypeID"].DefaultValue =
                 ((DropDownList)MachineGrid.FooterRow.FindControl("MachineTypeEntryDropDown")).SelectedValue;
-            SqlDataSource1.InsertParameters["Virtual"].DefaultValue =
+            SqlDataSourceMachine.InsertParameters["Virtual"].DefaultValue =
                 ((CheckBox)MachineGrid.FooterRow.FindControl("VirtualEntryCheckBox")).Checked.ToString();
-            SqlDataSource1.InsertParameters["MachineHostID"].DefaultValue =
+            SqlDataSourceMachine.InsertParameters["MachineHostID"].DefaultValue =
                 ((DropDownList)MachineGrid.FooterRow.FindControl("HostEntryDropDown")).SelectedValue;
-            SqlDataSource1.Insert();
+            SqlDataSourceMachine.Insert();
         }
     }
 }

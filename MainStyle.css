@@ -50,3 +50,9 @@ div#NavDiv ul li a:hover{
     background-color: #FFFFFF;
     color: #000000;
 }
+div#ButtonDiv {
+    margin: auto;
+}
+.dataButton {
+    margin:auto;
+}
