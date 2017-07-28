@@ -7,7 +7,9 @@
         <asp:Button ID ="OSButton" Text="Opperating Systems" OnClick="ShowOS" CssClass="dataButton" runat ="server"/>
     </div>
     <div>
-        <asp:GridView ID ="MachineGrid" Autogeneratecolumns="False" Visible="False" CssClass = "table" runat="server" ShowHeaderWhenEmpty="True" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MachineID" DataSourceID="SqlDataSourceMachine" ShowFooter="True" >
+        <asp:GridView ID ="MachineGrid" Autogeneratecolumns="False" Visible="False" CssClass = "table" runat="server"
+            ShowHeaderWhenEmpty="True" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px"
+            CellPadding="3" DataKeyNames="MachineID" DataSourceID="SqlDataSourceMachine" ShowFooter="True" OnRowEditing ="MachineGrid_RowEditing">
             <AlternatingRowStyle BackColor="#F7F7F7" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />

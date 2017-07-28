@@ -17,6 +17,7 @@ namespace MachineUpdateFrontEnd
         protected void ShowMachines(object sender, EventArgs e)
         {
             OSGridView.Visible = false;
+            machineGridInit();
             MachineGrid.Visible = (MachineGrid.Visible == false);
         }
         protected void ShowOS(object sender, EventArgs e)
@@ -54,6 +55,18 @@ namespace MachineUpdateFrontEnd
             SqlDataSourceMachine.InsertParameters["MachineHostID"].DefaultValue =
                 ((DropDownList)MachineGrid.FooterRow.FindControl("HostEntryDropDown")).SelectedValue;
             SqlDataSourceMachine.Insert();
+        }
+
+        protected void machineGridInit() {
+            //DropDownList OSDropDownList = MachineGrid.Rows[2].FindControl("OSDropDownList") as DropDownList;
+            //OSDropDownList.Items[0].Text = "test";
+        }
+
+        protected void MachineGrid_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            int index = e.NewEditIndex;
+            var ddl = MachineGrid.Rows[index].FindControl("OSDropDownList") as DropDownList;
+            SqlDataSourceMachine.Load();
         }
     }
 }
