@@ -65,16 +65,19 @@ namespace MachineUpdateFrontEnd
 
         protected void MachineGrid_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            DataSourceSelectArguments argsOS = new DataSourceSelectArguments();
-            DataView viewOS = (DataView)SqlDataSourceOS.Select(argsOS);
-            DataTable dtOS = viewOS.ToTable();
+            //DataSourceSelectArguments argsOS = new DataSourceSelectArguments();
+            //DataView viewOS = (DataView)SqlDataSourceOS.Select(argsOS);
+            //DataTable dtOS = viewOS.ToTable();
 
-            int index = e.NewEditIndex;
-            var ddl = MachineGrid.Rows[index].FindControl("OSDropDownList") as DropDownList;
+            //int index = e.NewEditIndex;
+            //DropDownList ddl = MachineGrid.Rows[index].FindControl("OSDropDownList") as DropDownList;
 
+            //ddl.SelectedItem.Text = "test";
+            /*
             for (int i = 0; i < dtOS.Rows.Count - 1; i++) {
                 ddl.Items.Add(new ListItem(dtOS.Columns[0].ToString(), dtOS.Columns[1].ToString()));
             }
+            */
         }
     }
 }

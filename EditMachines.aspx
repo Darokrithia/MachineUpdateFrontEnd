@@ -9,7 +9,7 @@
     <div>
         <asp:GridView ID ="MachineGrid" Autogeneratecolumns="False" Visible="False" CssClass = "table" runat="server"
             ShowHeaderWhenEmpty="True" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px"
-            CellPadding="3" DataKeyNames="MachineID" DataSourceID="SqlDataSourceMachine" ShowFooter="True" OnRowEditing ="MachineGrid_RowEditing">
+            CellPadding="3" DataKeyNames="MachineID" DataSourceID="SqlDataSourceMachine" ShowFooter="True" OnRowEditing ="MachineGrid_RowEditing" OnSelectedIndexChanged="MachineGrid_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="#F7F7F7" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
@@ -60,7 +60,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="MachineOSID" SortExpression="MachineOSID">
                     <EditItemTemplate>
-                        <asp:DropDownList ID = "OSDropDownList" runat="server" SelectedValue = '<%# Bind("MachineOSID") %>'>
+                        <asp:DropDownList ID = "OSDropDownList" runat="server" SelectedValue = '<%# Bind("MachineOSID") %>' DataSourceID="SqlDataSourceOS" DataTextField="MachineOS" DataValueField="MachineOSID" Width="107px">
                             <asp:ListItem Text ="Select OS" Value ="0"></asp:ListItem>
                             <asp:ListItem>1</asp:ListItem>
                             <asp:ListItem>2</asp:ListItem>
@@ -70,10 +70,10 @@
                         </asp:RequiredFieldValidator>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("MachineOSID") %>'></asp:Label>
+                        <asp:Label ID = "OSLabel" runat="server" Text = '<%# Bind("MachineOSID") %>' DataSourceID="SqlDataSourceOS" DataTextField="MachineOS" DataValueField="MachineOS" Width="107px"/>
                     </ItemTemplate>
                     <FooterTemplate>
-                        <asp:DropDownList ID = "OSEntryDropDownList" runat="server">
+                        <asp:DropDownList ID = "OSEntryDropDownList" runat="server" DataSourceID="SqlDataSourceOS" DataTextField="MachineOS" DataValueField="MachineOSID">
                             <asp:ListItem>0</asp:ListItem>
                             <asp:ListItem>1</asp:ListItem>
                             <asp:ListItem>2</asp:ListItem>
