@@ -70,7 +70,7 @@
                         </asp:RequiredFieldValidator>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:Label ID = "OSLabel" runat="server" Text = '<%# Bind("MachineOSID") %>' DataSourceID="SqlDataSourceOS" DataTextField="MachineOS" DataValueField="MachineOS" Width="107px"/>
+                        <asp:Label ID = "OSLabel" runat="server" Text = '<%# Bind("MachineOSID") %>' DataSourceID="SqlDataSourceOS" Width="107px" style="height: 22px"/>
                     </ItemTemplate>
                     <FooterTemplate>
                         <asp:DropDownList ID = "OSEntryDropDownList" runat="server" DataSourceID="SqlDataSourceOS" DataTextField="MachineOS" DataValueField="MachineOSID">
@@ -167,6 +167,22 @@
             <SortedDescendingCellStyle BackColor="#D8D8F0" />
             <SortedDescendingHeaderStyle BackColor="#3E3277" />
         </asp:GridView>
+        <asp:GridView ID ="TypeGridView" Autogeneratecolumns="False" Visible="True" CssClass = "table" runat="server" ShowHeaderWhenEmpty="True" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MachineTypeID" DataSourceID="SqlDataSourceType" ShowFooter="True" >
+            <AlternatingRowStyle BackColor="#F7F7F7" />
+            <Columns>
+                <asp:BoundField DataField="MachineTypeID" HeaderText="MachineTypeID" InsertVisible="False" ReadOnly="True" SortExpression="MachineTypeID" />
+                <asp:BoundField DataField="MachineType" HeaderText="MachineType" SortExpression="MachineType" />
+            </Columns>
+            <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
+            <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+            <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
+            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+            <SortedAscendingCellStyle BackColor="#F4F4FD" />
+            <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
+            <SortedDescendingCellStyle BackColor="#D8D8F0" />
+            <SortedDescendingHeaderStyle BackColor="#3E3277" />
+        </asp:GridView>
     </div>
     <asp:ValidationSummary ID = "EditErrprMessages" ForeColor="Red" runat="server"/>
     <asp:ValidationSummary ID = "EntryErrorMessages" ValidationGroup = "EntryVG" ForeColor="Red" runat="server"/>
@@ -181,6 +197,8 @@
             <asp:Parameter Name="MachineOS" Type="String" />
             <asp:Parameter Name="MachineOSID" Type="Int32" />
         </UpdateParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSourceType" runat="server" ConnectionString="<%$ ConnectionStrings:MachineUpdateDataBaseConnectionString %>" OnSelecting="SqlDataSourceOS_Selecting" SelectCommand="SELECT * FROM [MachineType]">
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSourceMachine" runat="server" ConnectionString="<%$ ConnectionStrings:MachineUpdateDataBaseConnectionString %>" DeleteCommand="DELETE FROM [Machine] WHERE [MachineID] = @MachineID" InsertCommand="INSERT INTO [Machine] ([MachineName], [MachineIP], [MachineOSID], [MachineTypeID], [Virtual], [MachineHostID]) VALUES (@MachineName, @MachineIP, @MachineOSID, @MachineTypeID, @Virtual, @MachineHostID)" OnSelecting="SqlDataSourceMachine_Selecting" SelectCommand="SELECT [MachineID], [MachineName], [MachineIP], [MachineOSID], [MachineTypeID], [Virtual], [MachineHostID] FROM [Machine]" UpdateCommand="UPDATE [Machine] SET [MachineName] = @MachineName, [MachineIP] = @MachineIP, [MachineOSID] = @MachineOSID, [MachineTypeID] = @MachineTypeID, [Virtual] = @Virtual, [MachineHostID] = @MachineHostID WHERE [MachineID] = @MachineID">
         <DeleteParameters>

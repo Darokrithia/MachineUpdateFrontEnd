@@ -49,6 +49,15 @@ namespace MachineUpdateFrontEnd {
         protected global::System.Web.UI.WebControls.GridView OSGridView;
         
         /// <summary>
+        /// TypeGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView TypeGridView;
+        
+        /// <summary>
         /// EditErrprMessages control.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace MachineUpdateFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceOS;
+        
+        /// <summary>
+        /// SqlDataSourceType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceType;
         
         /// <summary>
         /// SqlDataSourceMachine control.
