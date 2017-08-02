@@ -5,6 +5,7 @@
     <div id ="ButtonDiv">
         <asp:Button ID ="MachineButton" Text="Machines" OnClick="ShowMachines" CssClass="dataButton" runat ="server"/>
         <asp:Button ID ="OSButton" Text="Opperating Systems" OnClick="ShowOS" CssClass="dataButton" runat ="server"/>
+        <asp:Button ID ="TypeButton" Text="Hardware" OnClick="ShowType" CssClass="dataButton" runat ="server"/>
     </div>
     <div>
         <asp:GridView ID ="MachineGrid" Autogeneratecolumns="False" Visible="False" CssClass = "table" runat="server"
@@ -85,7 +86,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Machine Type" SortExpression="MachineTypeID">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="MachineTypeDropDown" runat="server" SelectedValue='<%# Bind("MachineTypeID") %>'>
+                        <asp:DropDownList ID="MachineTypeDropDown" runat="server" SelectedValue='<%# Bind("MachineTypeID") %>' DataSourceID="SqlDataSourceType" DataTextField="MachineType" DataValueField="MachineTypeID">
                             <asp:ListItem>0</asp:ListItem>
                             <asp:ListItem>1</asp:ListItem>
                             <asp:ListItem>2</asp:ListItem>
@@ -99,7 +100,7 @@
                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("MachineTypeID") %>'></asp:Label>
                     </ItemTemplate>
                     <FooterTemplate>
-                        <asp:DropDownList ID="MachineTypeEntryDropDown" runat="server">
+                        <asp:DropDownList ID="MachineTypeEntryDropDown" runat="server" DataSourceID="SqlDataSourceType" DataTextField="MachineType" DataValueField="MachineTypeID">
                             <asp:ListItem>0</asp:ListItem>
                             <asp:ListItem>1</asp:ListItem>
                             <asp:ListItem>2</asp:ListItem>
@@ -123,7 +124,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Machine Host" SortExpression="MachineHostID">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="HostDropDown" runat="server" SelectedValue='<%# "0" %>'>
+                        <asp:DropDownList ID="HostDropDown" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourceMachine" DataTextField="MachineName" DataValueField="MachineID">
                             <asp:ListItem Text ="Select Host">0</asp:ListItem>
                             <asp:ListItem>1</asp:ListItem>
                             <asp:ListItem>2</asp:ListItem>
@@ -133,7 +134,7 @@
                         <asp:Label ID="Label6" runat="server" Text='<%# Bind("MachineHostID") %>'></asp:Label>
                     </ItemTemplate>
                     <FooterTemplate>
-                        <asp:DropDownList ID="HostEntryDropDown" runat="server">
+                        <asp:DropDownList ID="HostEntryDropDown" runat="server" DataSourceID="SqlDataSourceMachine" DataTextField="MachineName" DataValueField="MachineID">
                             <asp:ListItem Text ="Select Host">0</asp:ListItem>
                             <asp:ListItem>1</asp:ListItem>
                             <asp:ListItem>2</asp:ListItem>
@@ -167,7 +168,7 @@
             <SortedDescendingCellStyle BackColor="#D8D8F0" />
             <SortedDescendingHeaderStyle BackColor="#3E3277" />
         </asp:GridView>
-        <asp:GridView ID ="TypeGridView" Autogeneratecolumns="False" Visible="True" CssClass = "table" runat="server" ShowHeaderWhenEmpty="True" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MachineTypeID" DataSourceID="SqlDataSourceType" ShowFooter="True" >
+        <asp:GridView ID ="TypeGridView" Autogeneratecolumns="False" CssClass = "table" runat="server" ShowHeaderWhenEmpty="True" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MachineTypeID" DataSourceID="SqlDataSourceType" ShowFooter="True" >
             <AlternatingRowStyle BackColor="#F7F7F7" />
             <Columns>
                 <asp:BoundField DataField="MachineTypeID" HeaderText="MachineTypeID" InsertVisible="False" ReadOnly="True" SortExpression="MachineTypeID" />
@@ -200,25 +201,25 @@
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSourceType" runat="server" ConnectionString="<%$ ConnectionStrings:MachineUpdateDataBaseConnectionString %>" OnSelecting="SqlDataSourceOS_Selecting" SelectCommand="SELECT * FROM [MachineType]">
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSourceMachine" runat="server" ConnectionString="<%$ ConnectionStrings:MachineUpdateDataBaseConnectionString %>" DeleteCommand="DELETE FROM [Machine] WHERE [MachineID] = @MachineID" InsertCommand="INSERT INTO [Machine] ([MachineName], [MachineIP], [MachineOSID], [MachineTypeID], [Virtual], [MachineHostID]) VALUES (@MachineName, @MachineIP, @MachineOSID, @MachineTypeID, @Virtual, @MachineHostID)" OnSelecting="SqlDataSourceMachine_Selecting" SelectCommand="SELECT [MachineID], [MachineName], [MachineIP], [MachineOSID], [MachineTypeID], [Virtual], [MachineHostID] FROM [Machine]" UpdateCommand="UPDATE [Machine] SET [MachineName] = @MachineName, [MachineIP] = @MachineIP, [MachineOSID] = @MachineOSID, [MachineTypeID] = @MachineTypeID, [Virtual] = @Virtual, [MachineHostID] = @MachineHostID WHERE [MachineID] = @MachineID">
+    <asp:SqlDataSource ID="SqlDataSourceMachine" runat="server" ConnectionString="<%$ ConnectionStrings:MachineUpdateDataBaseConnectionString %>" DeleteCommand="DELETE FROM [Machine] WHERE [MachineID] = @MachineID" InsertCommand="INSERT INTO [Machine] ([MachineName], [MachineIP], [MachineTypeID], [MachineOSID], [MachineHostID], [Virtual]) VALUES (@MachineName, @MachineIP, @MachineTypeID, @MachineOSID, @MachineHostID, @Virtual)" OnSelecting="SqlDataSourceMachine_Selecting" SelectCommand="SELECT * FROM [Machine]" UpdateCommand="UPDATE [Machine] SET [MachineName] = @MachineName, [MachineIP] = @MachineIP, [MachineTypeID] = @MachineTypeID, [MachineOSID] = @MachineOSID, [MachineHostID] = @MachineHostID, [Virtual] = @Virtual WHERE [MachineID] = @MachineID">
         <DeleteParameters>
             <asp:Parameter Name="MachineID" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="MachineName" Type="String" />
             <asp:Parameter Name="MachineIP" Type="String" />
-            <asp:Parameter Name="MachineOSID" Type="Int32" />
             <asp:Parameter Name="MachineTypeID" Type="Int32" />
-            <asp:Parameter Name="Virtual" Type="Boolean" />
+            <asp:Parameter Name="MachineOSID" Type="Int32" />
             <asp:Parameter Name="MachineHostID" Type="Int32" />
+            <asp:Parameter Name="Virtual" Type="Boolean" />
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="MachineName" Type="String" />
             <asp:Parameter Name="MachineIP" Type="String" />
-            <asp:Parameter Name="MachineOSID" Type="Int32" />
             <asp:Parameter Name="MachineTypeID" Type="Int32" />
-            <asp:Parameter Name="Virtual" Type="Boolean" />
+            <asp:Parameter Name="MachineOSID" Type="Int32" />
             <asp:Parameter Name="MachineHostID" Type="Int32" />
+            <asp:Parameter Name="Virtual" Type="Boolean" />
             <asp:Parameter Name="MachineID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>

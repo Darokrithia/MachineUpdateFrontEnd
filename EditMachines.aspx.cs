@@ -18,13 +18,22 @@ namespace MachineUpdateFrontEnd
         protected void ShowMachines(object sender, EventArgs e)
         {
             OSGridView.Visible = false;
+            TypeGridView.Visible = false;
             machineGridInit();
             MachineGrid.Visible = (MachineGrid.Visible == false);
         }
         protected void ShowOS(object sender, EventArgs e)
         {
             MachineGrid.Visible = false;
+            TypeGridView.Visible = false;
             OSGridView.Visible = (OSGridView.Visible == false);
+        }
+
+        protected void ShowType(object sender, EventArgs e)
+        {
+            MachineGrid.Visible = false;
+            OSGridView.Visible = false;
+            TypeGridView.Visible = (TypeGridView.Visible == false);
         }
 
         protected void SqlDataSourceOS_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
