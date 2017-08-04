@@ -22,7 +22,7 @@
                         <asp:Label ID="Label5" runat="server" Text='<%# Bind("MachineID") %>'></asp:Label>
                     </ItemTemplate>
                     <FooterTemplate>
-                        <asp:Button ID ="SubmitButton" ValidationGroup = "EntryVG" OnClick="SubmitButtonClick" Text="Submit" runat="server"/>
+                        <asp:Button ID ="MachineSubmitButton" ValidationGroup = "EntryVG" OnClick="MachineSubmitButtonClick" Text="Submit" runat="server"/>
                     </FooterTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Machine Name" SortExpression="MachineName">
@@ -155,8 +155,29 @@
         <asp:GridView ID ="OSGridView" Autogeneratecolumns="False" Visible="False" CssClass = "table" runat="server" ShowHeaderWhenEmpty="True" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MachineOSID" DataSourceID="SqlDataSourceOS" ShowFooter="True" >
             <AlternatingRowStyle BackColor="#F7F7F7" />
             <Columns>
-                <asp:BoundField DataField="MachineOSID" HeaderText="MachineOSID" InsertVisible="False" ReadOnly="True" SortExpression="MachineOSID" />
-                <asp:BoundField DataField="MachineOS" HeaderText="MachineOS" SortExpression="MachineOS" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                <asp:TemplateField HeaderText="Machine OS ID" InsertVisible="False" SortExpression="MachineOSID">
+                    <EditItemTemplate>
+                        <asp:Label ID="OSIDLabel1" runat="server" Text='<%# Eval("MachineOSID") %>'></asp:Label>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="OSIDLabel2" runat="server" Text='<%# Bind("MachineOSID") %>'></asp:Label>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:Button ID ="OSSubmitButton" ValidationGroup = "EntryVG" OnClick="OSSubmitButtonClick" Text="Submit" runat="server"/>
+                    </FooterTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Machine OS Name" SortExpression="MachineOS">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="MachineOSTextBox" runat="server" Text='<%# Bind("MachineOS") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="OSNameLabel" runat="server" Text='<%# Bind("MachineOS") %>'></asp:Label>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox ID = "OSNameEntryTextBox" runat = "server"></asp:TextBox>
+                    </FooterTemplate>
+                </asp:TemplateField>
             </Columns>
             <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
             <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
@@ -168,11 +189,32 @@
             <SortedDescendingCellStyle BackColor="#D8D8F0" />
             <SortedDescendingHeaderStyle BackColor="#3E3277" />
         </asp:GridView>
-        <asp:GridView ID ="TypeGridView" Autogeneratecolumns="False" CssClass = "table" runat="server" ShowHeaderWhenEmpty="True" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MachineTypeID" DataSourceID="SqlDataSourceType" ShowFooter="True" >
+        <asp:GridView ID ="TypeGridView" Autogeneratecolumns="False" Visible ="False" CssClass = "table" runat="server" ShowHeaderWhenEmpty="True" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="MachineTypeID" DataSourceID="SqlDataSourceType" ShowFooter="True" >
             <AlternatingRowStyle BackColor="#F7F7F7" />
             <Columns>
-                <asp:BoundField DataField="MachineTypeID" HeaderText="MachineTypeID" InsertVisible="False" ReadOnly="True" SortExpression="MachineTypeID" />
-                <asp:BoundField DataField="MachineType" HeaderText="MachineType" SortExpression="MachineType" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                <asp:TemplateField HeaderText="Machine Type ID" InsertVisible="False" SortExpression="MachineTypeID">
+                    <EditItemTemplate>
+                        <asp:Label ID="TypeIDLabel1" runat="server" Text='<%# Eval("MachineTypeID") %>'></asp:Label>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="TypeIDLabel2" runat="server" Text='<%# Bind("MachineTypeID") %>'></asp:Label>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:Button ID ="TypeSubmitButton" ValidationGroup = "EntryVG" OnClick="TypeSubmitButtonClick" Text="Submit" runat="server"/>
+                    </FooterTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Machine Type" SortExpression="MachineType">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="MachineTypeTextBox" runat="server" Text='<%# Bind("MachineType") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="TypeNameLabel" runat="server" Text='<%# Bind("MachineType") %>'></asp:Label>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox ID = "TypeNameEntryTextBox" runat = "server"></asp:TextBox>
+                    </FooterTemplate>
+                </asp:TemplateField>
             </Columns>
             <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
             <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
@@ -199,7 +241,17 @@
             <asp:Parameter Name="MachineOSID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSourceType" runat="server" ConnectionString="<%$ ConnectionStrings:MachineUpdateDataBaseConnectionString %>" OnSelecting="SqlDataSourceOS_Selecting" SelectCommand="SELECT * FROM [MachineType]">
+    <asp:SqlDataSource ID="SqlDataSourceType" runat="server" ConnectionString="<%$ ConnectionStrings:MachineUpdateDataBaseConnectionString %>" OnSelecting="SqlDataSourceOS_Selecting" SelectCommand="SELECT * FROM [MachineType]" DeleteCommand="DELETE FROM [MachineType] WHERE [MachineTypeID] = @MachineTypeID" InsertCommand="INSERT INTO [MachineType] ([MachineType]) VALUES (@MachineType)" UpdateCommand="UPDATE [MachineType] SET [MachineType] = @MachineType WHERE [MachineTypeID] = @MachineTypeID">
+        <DeleteParameters>
+            <asp:Parameter Name="MachineTypeID" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="MachineType" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="MachineType" Type="String" />
+            <asp:Parameter Name="MachineTypeID" Type="Int32" />
+        </UpdateParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSourceMachine" runat="server" ConnectionString="<%$ ConnectionStrings:MachineUpdateDataBaseConnectionString %>" DeleteCommand="DELETE FROM [Machine] WHERE [MachineID] = @MachineID" InsertCommand="INSERT INTO [Machine] ([MachineName], [MachineIP], [MachineTypeID], [MachineOSID], [MachineHostID], [Virtual]) VALUES (@MachineName, @MachineIP, @MachineTypeID, @MachineOSID, @MachineHostID, @Virtual)" OnSelecting="SqlDataSourceMachine_Selecting" SelectCommand="SELECT * FROM [Machine]" UpdateCommand="UPDATE [Machine] SET [MachineName] = @MachineName, [MachineIP] = @MachineIP, [MachineTypeID] = @MachineTypeID, [MachineOSID] = @MachineOSID, [MachineHostID] = @MachineHostID, [Virtual] = @Virtual WHERE [MachineID] = @MachineID">
         <DeleteParameters>

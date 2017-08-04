@@ -50,7 +50,7 @@ namespace MachineUpdateFrontEnd
 
         }
 
-        protected void SubmitButtonClick(object sender, EventArgs e)
+        protected void MachineSubmitButtonClick(object sender, EventArgs e)
         {
             SqlDataSourceMachine.InsertParameters["MachineName"].DefaultValue =
                 ((TextBox)MachineGrid.FooterRow.FindControl("MachineNameEntryTextBox")).Text;
@@ -67,7 +67,20 @@ namespace MachineUpdateFrontEnd
             SqlDataSourceMachine.Insert();
         }
 
-        
+        protected void OSSubmitButtonClick(object sender, EventArgs e)
+        {
+            SqlDataSourceOS.InsertParameters["MachineOS"].DefaultValue =
+                ((TextBox)OSGridView.FooterRow.FindControl("OSNameEntryTextBox")).Text;
+            SqlDataSourceOS.Insert();
+        }
+
+        protected void TypeSubmitButtonClick(object sender, EventArgs e)
+        {
+            SqlDataSourceType.InsertParameters["MachineType"].DefaultValue =
+                ((TextBox)TypeGridView.FooterRow.FindControl("TypeNameEntryTextBox")).Text;
+            SqlDataSourceType.Insert();
+        }
+
         protected void machineGridInit() {
             /*
             Label OSLabel = MachineGrid.Rows[2].FindControl("OSLabel") as Label;
