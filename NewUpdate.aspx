@@ -2,4 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <asp:SqlDataSource ID ="UpdateSqlDataSource" runat ="server" ConnectionString="<%$ ConnectionStrings:MachineUpdateDataBaseConnectionString %>" SelectCommand="SELECT * FROM [MachineUpdate MQ]">
+
+    </asp:SqlDataSource>
 </asp:Content>
