@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,11 +16,16 @@ namespace MachineUpdateFrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DataSet temp = pullData(UpdateSqlDataSource.ConnectionString);
+            input = SwitchRows(temp);
+            GridView1.DataSource = input.Tables[0];
         }
 
-        private void pullData() {
-
+        private DataSet pullData(string ConStr) {
+            DataSet ds = new DataSet();
+            SqlDataAdapter adp = new SqlDataAdapter("select * from MachineUpdate", ConStr);
+            adp.Fill(ds, "MachineUpdate");
+            return ds;
         }
 
         private void pushData() {
