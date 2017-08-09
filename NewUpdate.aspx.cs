@@ -19,6 +19,7 @@ namespace MachineUpdateFrontEnd
             DataSet temp = pullData(UpdateSqlDataSource.ConnectionString);
             input = SwitchRows(temp);
             GridView1.DataSource = input.Tables[0];
+            GridView1.DataBind();
         }
 
         private DataSet pullData(string ConStr) {
