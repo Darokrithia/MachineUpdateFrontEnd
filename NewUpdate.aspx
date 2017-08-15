@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="True" style="margin-top: 0px" ShowHeaderWhenEmpty ="true">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="True" style="margin-top: 0px" ShowHeaderWhenEmpty ="true" Visible ="True" DataSourceID="UpdateSqlDataSource">
         <Columns>
         </Columns>
     </asp:GridView>
