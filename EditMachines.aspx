@@ -10,7 +10,8 @@
     <div>
         <asp:GridView ID ="MachineGrid" Autogeneratecolumns="False" Visible="False" CssClass = "table" runat="server"
             ShowHeaderWhenEmpty="True" AllowSorting="True" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px"
-            CellPadding="3" DataKeyNames="MachineID" DataSourceID="SqlDataSourceMachine" ShowFooter="True" OnRowEditing ="MachineGrid_RowEditing" OnSelectedIndexChanged="MachineGrid_SelectedIndexChanged">
+            CellPadding="3" DataKeyNames="MachineID" DataSourceID="SqlDataSourceMachine" ShowFooter="True" OnRowEditing ="MachineGrid_RowEditing"
+            OnSelectedIndexChanged="MachineGrid_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="#F7F7F7" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
